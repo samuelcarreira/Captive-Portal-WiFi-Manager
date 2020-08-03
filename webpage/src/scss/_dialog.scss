@@ -1,0 +1,73 @@
+.dialog-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  display: none;
+
+  &>div {
+    left: 0;
+    right: 0;
+    width: fit-content;
+    max-width: 90%;
+    height: fit-content;
+    max-height: 95%;
+    margin: auto;
+    border: none;
+    display: block;
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    background-color: $color-white;
+    padding: 10px 16px;
+    border-radius: 10px;
+
+    outline: none;
+
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
+
+    overflow-y: auto;
+  }
+}
+
+#dialog-wifiscan > div {
+  width: 420px;
+}
+
+#dialog-save {
+  & > div {
+    width: 340px;
+  }
+
+  text-align: center;
+  
+  & p {
+    font-weight: 500;
+    color: $color-main;
+  }
+
+  & small {
+    opacity: 0.7;
+  }
+
+  & svg {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+#ok-info-message {
+  & svg {
+    fill: $color-secundary;
+  }
+}
+
+#error-info-message {
+  display: none;
+  & svg {
+    fill: #b0002080;
+  }
+}

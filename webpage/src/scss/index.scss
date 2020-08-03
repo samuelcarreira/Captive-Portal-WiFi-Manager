@@ -1,0 +1,138 @@
+@import './vars';
+@import './_dialog';
+@import './_controls';
+@import './spinner';
+
+* {
+  font-family: $font-family;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+body {
+  background-color: $color-background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+#main-container {
+  background-color: $color-white;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 90%;
+}
+
+
+.form-line-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &>div:first-child {
+    flex: 1;
+  }
+}
+
+// dialog::backdrop { /* native */
+//   background-color: red;
+// }
+// dialog+.backdrop {
+//   /* polyfill */
+//   background-color: red;
+// }
+
+
+
+h3 {
+  color: $color-grey2;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.01rem;
+  margin-bottom: 10px;
+}
+
+
+.footer-buttons-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.main-button-container {
+  margin-top: 16px;
+}
+
+#section-ipsettings {
+  animation: slide-down .3s ease-out;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.dialog-close-button-container {
+  text-align: right;
+  margin-right: -10px;
+}
+
+h4  {
+  color: $color-main3;
+  margin: 0 0 16px 0;
+  font-size: 1.3rem;
+}
+
+.device-info {
+  font-size: 0.8rem;
+  line-height: 1.9;
+  width: 100%;
+  background-color: #dbdbdb67;
+  padding: 8px 12px;
+  border-radius: 10px;
+
+  & tr > td:first-child {
+    font-weight: 600;
+    padding-right: 22px;
+  }
+  & tr > td:last-child {
+    text-align: right;
+    color: $color-grey2;
+  }
+}
+
+.info-text {
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.7;
+  text-align: center;
+  color: $color-grey2;
+}
+
+#no-networks-found {
+  display: none;
+  & p {
+    text-align: center;
+    font-weight: 500;
+    margin: 30px 0;
+  }
+  & ul {
+    opacity: 0.65;
+    font-size: 0.75rem;
+    line-height: 1.7;
+  }
+}

@@ -1,0 +1,28 @@
+Device boot;
+if(Config button long press) {
+  Captive Portal;
+  Restart device;
+  return;
+} else if(EEPROM CRC failed) {
+    Captive Portal;
+    Restart device;
+    return;
+} else  if(No SSID saved on EEPROM) {
+    Captive Portal;
+    Restart device;
+    return;
+ }
+
+Connect to WiFi;
+if (Wifi Connected) {
+  DONE! runs your code...;
+  return;
+} else {
+  // possible wrong password
+  if (Restart reason is software) {
+    Captive Portal;
+    Restart device;
+  } else {
+    Try to connect again;
+  }
+}

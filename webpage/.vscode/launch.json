@@ -1,0 +1,35 @@
+{
+    "compounds": [
+        {
+            "name": "Start server and chrome debugger",
+            "configurations": [
+                "Dev server",
+                "Chrome : Launch with sourcemaps"
+            ]
+        }
+    ],
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Dev server",
+            "program": "${workspaceFolder}/node_modules/gulp/bin/gulp.js",
+            "args": [
+                "dev"
+            ]
+        },
+        {
+            "name": "Chrome : Launch with sourcemaps",
+            // works with or without preLaunchTask
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "breakOnLoad": true,
+            "webRoot": "${workspaceRoot}/src",
+            "sourceMaps": true,
+            "runtimeArgs": [
+                "--remote-debugging-port=9222"
+            ]
+        }
+    ]
+}

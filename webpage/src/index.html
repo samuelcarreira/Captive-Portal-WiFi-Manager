@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wifi config</title>
+
+  <link rel="stylesheet" href="/css/index.css" inline />
+</head>
+
+<body>
+  <div id="main-container">
+    <form action="/save" method="post" id="form-setup">
+      <div class="form-line-container">
+        <div>
+          <div class="input-text">
+            <input type="text" name="ssid" id="text-ssid" maxlength="32" autocomplete="off" spellcheck="false"
+              required />
+            <label for="text-ssid">SSID</label>
+          </div>
+        </div>
+
+        <div>
+          <button class="icon-button" type="button" title="Scan Networks" id="button-scanwifi">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path
+                d="M15.9 5c-.17 0-.32.09-.41.23l-.07.15-5.18 11.65c-.16.29-.26.61-.26.96 0 1.11.9 2.01 2.01 2.01.96 0 1.77-.68 1.96-1.59l.01-.03L16.4 5.5c0-.28-.22-.5-.5-.5zM1 9l2 2c2.88-2.88 6.79-4.08 10.53-3.62l1.19-2.68C9.89 3.84 4.74 5.27 1 9zm20 2l2-2c-1.64-1.64-3.55-2.82-5.59-3.57l-.53 2.82c1.5.62 2.9 1.53 4.12 2.75zm-4 4l2-2c-.8-.8-1.7-1.42-2.66-1.89l-.55 2.92c.42.27.83.59 1.21.97zM5 13l2 2c1.13-1.13 2.56-1.79 4.03-2l1.28-2.88c-2.63-.08-5.3.87-7.31 2.88z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="form-line-container">
+        <div>
+          <div class="input-text">
+            <input type="password" name="password" id="text-password" maxlength="63" minlength="8" autocomplete="off"
+              spellcheck="false" />
+            <label for="text-password">Password</label>
+          </div>
+        </div>
+
+        <div>
+          <button class="icon-button" type="button" title="Show" id="btn-showHidePassword" aria-pressed="false">
+            <svg id="svg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px"
+              height="18px">
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path
+                d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z" />
+            </svg>
+            <svg id="svg2" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"
+              width="18px" height="18px">
+              <path d="M0 0h24v24H0V0zm0 0h24v24H0V0zm0 0h24v24H0V0zm0 0h24v24H0V0z" fill="none" />
+              <path
+                d="M12 6c3.79 0 7.17 2.13 8.82 5.5-.59 1.22-1.42 2.27-2.41 3.12l1.41 1.41c1.39-1.23 2.49-2.77 3.18-4.53C21.27 7.11 17 4 12 4c-1.27 0-2.49.2-3.64.57l1.65 1.65C10.66 6.09 11.32 6 12 6zm-1.07 1.14L13 9.21c.57.25 1.03.71 1.28 1.28l2.07 2.07c.08-.34.14-.7.14-1.07C16.5 9.01 14.48 7 12 7c-.37 0-.72.05-1.07.14zM2.01 3.87l2.68 2.68C3.06 7.83 1.77 9.53 1 11.5 2.73 15.89 7 19 12 19c1.52 0 2.98-.29 4.32-.82l3.42 3.42 1.41-1.41L3.42 2.45 2.01 3.87zm7.5 7.5l2.61 2.61c-.04.01-.08.02-.12.02-1.38 0-2.5-1.12-2.5-2.5 0-.05.01-.08.01-.13zm-3.4-3.4l1.75 1.75c-.23.55-.36 1.15-.36 1.78 0 2.48 2.02 4.5 4.5 4.5.63 0 1.23-.13 1.77-.36l.98.98c-.88.24-1.8.38-2.75.38-3.79 0-7.17-2.13-8.82-5.5.7-1.43 1.72-2.61 2.93-3.53z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 12px;">
+        <h3>IP Settings</h3>
+
+        <label class="pure-material-radio">
+          <input type="radio" name="ipSettings" id="radio-dhcp" value="dhcp" checked />
+          <span>DHCP</span>
+        </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <label class="pure-material-radio">
+          <input type="radio" name="ipSettings" id="radio-static" value="static" />
+          <span>Static</span>
+        </label>
+      </div>
+
+      <section id="section-ipsettings" style="display: none;">
+        <div>
+          <div class="input-text">
+            <input type="text" name="ip" id="text-ip" placeholder="0.0.0.0" minlength="7" maxlength="15"
+              autocomplete="off" autocorrect="off" pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$" />
+            <label for="text-ip">IP address</label>
+          </div>
+        </div>
+
+        <div>
+          <div class="input-text">
+            <input type="text" name="subnet" id="text-subnet" placeholder="255.255.255.0" minlength="7" maxlength="15"
+              autocomplete="off" autocorrect="off"
+              pattern="^(((255\.){3}(255|254|252|248|240|224|192|128|0+))|((255\.){2}(255|254|252|248|240|224|192|128|0+)\.0)|((255\.)(255|254|252|248|240|224|192|128|0+)(\.0+){2})|((255|254|252|248|240|224|192|128|0+)(\.0+){3}))$" />
+            <label for="text-subnet">Subnet Mask</label>
+          </div>
+        </div>
+
+        <div>
+          <div class="input-text">
+            <input type="text" name="gateway" id="text-gateway" placeholder="0.0.0.0" minlength="7" maxlength="15"
+              autocomplete="off" autocorrect="off" pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$" />
+            <label for="text-gateway">Gateway</label>
+          </div>
+        </div>
+
+        <div>
+          <div class="input-text">
+            <input type="text" name="dns1" id="text-dns1" placeholder="0.0.0.0" minlength="7" maxlength="15"
+              autocomplete="off" autocorrect="off" pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$" />
+            <label for="text-dns1">DNS</label>
+          </div>
+        </div>
+
+        <div>
+          <div class="input-text">
+            <input type="text" name="dns2" id="text-dns2" placeholder="0.0.0.0" minlength="7" maxlength="15"
+              autocomplete="off" autocorrect="off" pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$" />
+            <label for="text-dns2">DNS alternative</label>
+          </div>
+        </div>
+      </section>
+
+      <div class="main-button-container">
+        <button type="submit" class="main-button">save</button>
+      </div>
+    </form>
+
+    <div class="footer-buttons-container">
+      <button id="btn-about" class="text-button" data-dialog_open="dialog-info">
+        Device info
+      </button>
+      <button id="btn-firmware" class="text-button" data-dialog_open="dialog-firmware">
+        Firmware update
+      </button>
+    </div>
+  </div>
+
+  <div tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="device-info-title" id="dialog-info"
+    class="dialog-container">
+    <div>
+      <div class="dialog-close-button-container">
+        <button class="dialog-close-button" data-dialog_close="dialog-info">
+          &times;
+        </button>
+      </div>
+
+      <h4 id="device-info-title">Device Info</h4>
+
+      <table class="device-info">
+        <tbody>
+          <tr>
+            <td>Firmware version</td>
+            <td data-info="firmwareversion"></td>
+          </tr>
+          <tr>
+            <td>MAC Address</td>
+            <td data-info="mac"></td>
+          </tr>
+          <tr>
+            <td>Chip ID</td>
+            <td data-info="chipid"></td>
+          </tr>
+          <tr>
+            <td>Flash Chip ID</td>
+            <td data-info="flashchipid"></td>
+          </tr>
+          <tr>
+            <td>Flash Size</td>
+            <td data-info="flashchiprealsize"></td>
+          </tr>
+          <!-- <tr>
+            <td>Firmware Size</td>
+            <td data-info="sketchsize"></td>
+          </tr> -->
+        </tbody>
+      </table>
+
+      <p class="info-text">
+        Developed by Samuel Carreira
+        <br />
+        github.com/samuelcarreira/webconfig
+      </p>
+      <p class="info-text">
+        <small>{VERSION}</small>
+      </p>
+    </div>
+  </div>
+
+  <div tabindex="-1" role="dialog" aria-hidden="true" id="dialog-save" class="dialog-container">
+    <div>
+      <div class="dialog-close-button-container">
+        <button class="dialog-close-button" data-dialog_close="dialog-save">
+          &times;
+        </button>
+      </div>
+
+      <div id="ok-info-message">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+        </svg>
+        <p>
+          WiFi settings were successfully saved!
+        </p>
+        <p>
+          <small>
+            Your device will be restarted now...
+            <br />
+            You can close this page and check if your device is now connected
+            to your network.
+          </small>
+        </p>
+      </div>
+
+      <div id="error-info-message">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+        </svg>
+
+        <div id="error-message-saving">
+          <p>
+            Error saving WiFi Settings!
+          </p>
+          <p>
+            <small>
+              Check that the data entered is valid and try again
+            </small>
+          </p>
+        </div>
+
+        <div id="error-message-password">
+          <p>
+            Error when connecting to your network!
+          </p>
+          <p>
+            <small>
+              Make sure that your WiFi password or IP settings are correct.
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="firmware-title" id="dialog-firmware"
+    class="dialog-container">
+    <div>
+      <div class="dialog-close-button-container">
+        <button class="dialog-close-button" data-dialog_close="dialog-firmware">
+          &times;
+        </button>
+      </div>
+
+      <h4 id="firmware-title">Firmware update (TODO)</h4>
+
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="update" id="" accept=".bin" required />
+
+        <p>
+          <small>
+            Do not disconnect or turn off your device while updating...
+          </small>
+        </p>
+
+        <button type="submit" class="main-button">Update</button>
+      </form>
+    </div>
+  </div>
+
+  <div tabindex="-1" role="dialog" aria-hidden="true" id="dialog-wifiscan" aria-labelledby="wifiscan-title"
+    class="dialog-container">
+    <div>
+      <div class="dialog-close-button-container">
+        <button class="dialog-close-button" data-dialog_close="dialog-wifiscan">
+          &times;
+        </button>
+      </div>
+
+      <h4 id="wifiscan-title">Available Networks</h4>
+
+      <div id="loading-wifiscan">
+        <div class="spinner">
+          <div class="dot1"></div>
+          <div class="dot2"></div>
+        </div>
+        <p class="spinner-text">Scanning networks...</p>
+      </div>
+
+      <div id="no-networks-found">
+        <p>No networks found :-(</p>
+        <ul>
+          <li>
+            Make sure that your device is within range of your wireless router
+            and has a good connection.
+          </li>
+          <li>
+            Check that your device is away from any devices that cause
+            interference (such as microwaves, baby monitors, or other
+            electronic devices).
+          </li>
+          <li>
+            If you have several devices connected to your Wi-Fi network, try
+            removing some of them to reduce congestion.
+          </li>
+          <li>
+            If your router doesn't broadcast the SSID (hidden network), enter
+            it manually.
+          </li>
+          <li>Connect your device to the 2.4 GHz band of your router.</li>
+          <li>Restart your device and your Internet router and/or modem.</li>
+        </ul>
+      </div>
+
+      <div id="ssid-list"></div>
+
+      <!-- <button class="ssid-button" data-ssid="NETWORK 2.4GHZ">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M12,3C16.22,3 20.32,4.41 23.65,7L21.54,9.62L20.5,9.5C19.93,9.5 19.37,9.6 18.83,9.79L20.71,7.45C18.08,5.86 15.07,5 12,5C8.92,5 5.91,5.85 3.27,7.44L8.39,13.8C9.5,13.28 10.75,13 12,13C13.23,13 14.44,13.28 15.55,13.79L15.5,14.5V17.14L12,21.5L0.38,7C3.7,4.42 7.79,3 12,3M23,16C23.5,16 24,16.5 24,17V21C24,21.5 23.5,22 23,22H18C17.5,22 17,21.5 17,21V17C17,16.5 17.5,16 18,16V14.5C18,13.1 19.1,12 20.5,12C21.9,12 23,13.1 23,14.5V16M22,16V14.5C22,13.7 21.3,13 20.5,13C19.7,13 19,13.7 19,14.5V16H22Z" /></svg>
+        </span>
+        <span>
+          NETWORK 2.4GHZ
+        </span>
+      </button> -->
+    </div>
+  </div>
+
+  <script src="js/index.js" inline></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+{
+  "name": "webpage2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "minifyImages": "gulp minifyImages"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "cssnano": "^4.1.10",
+    "del": "^5.1.0",
+    "eslint": "^7.5.0",
+    "eslint-config-google": "^0.14.0",
+    "gulp": "^4.0.2",
+    "gulp-gzip": "^1.4.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-inline-source": "^4.0.0",
+    "gulp-nodemon": "^2.5.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-purgecss": "^2.3.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "node-sass": "^4.14.1"
+  },
+  "dependencies": {}
+}
